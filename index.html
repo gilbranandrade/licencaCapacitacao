@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Licença Capacitação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <style>
+    .badge {
+      border: 2px solid rgba(0, 0, 0, 0.5);
+      font-size: 0.75em !important;
+      font-weight: 500 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row mb-3"></div>
+    <div class="row mb-3 text-center">
+        <h1>Licença Capacitação</h1>
+        <small class="text-body-secondary">Calcula carga horária necessária ou número de dias necessário para o afastamento</small>
+    </div>
+
+    <div class="row mb-3">
+        <nav aria-label="...">
+          <ul class="pagination" id="paginacao">
+            <li class="page-item col-6 mx-auto text-center active" aria-current="page">
+              <a class="page-link" href="#" onclick="changeActive(this, 'formDias')">Quantos Dias?</a>
+            </li>
+            <li class="page-item col-6 mx-auto text-center">
+              <a class="page-link" href="#" onclick="changeActive(this, 'formHoras')">Qual CH?</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+<!-- ================================================================================================================ -->
+    <div id="formDias">
+      <form id="calculaDias" class="needs-validation" novalidate>
+        <div class="row form-floating mb-3">
+          <input type="text" class="form-control" id="horas" name="horas" placeholder="N" required>
+          <div class="invalid-feedback">
+            Digite a carga horária do curso que deseja realizar
+          </div>
+          <label for="horas">Carga Horária do Curso</label>
+        </div>
+        <div class="d-grid gap-2 row mb-3">
+          <button type="submit" class="btn btn-primary" onclick="calculo('dias')">Calcular Quantidade de Dias Necessários</button>
+        </div>
+      </form>
+
+      <div class="row mb-3">
+        <h1 id="respDias" class="display-3 text-center" style="display: none;">5 dias</h1>
+      </div>
+    </div>
+<!-- ================================================================================================================ -->
+    <div id="formHoras" style="display: none;">
+      <form id="calculaHoras" class="needs-validation" novalidate>
+        <div class="row form-floating mb-3"">
+          <input type="text" id="dias" name="dias" class="form-control" placeholder="N" required>
+          <div class="invalid-feedback">
+            Digite a quantidade de dias que deseja se afastar
+          </div>
+          <label for="dias">Quantidade de Dias Afastado</label>
+        </div>
+        <div class="d-grid gap-2 row mb-3">
+          <button type="submit" class="btn btn-primary" onclick="calculo('horas')">Calcular Carga Horária Necessária</button>
+        </div>
+      </form>
+
+      <div class="row mb-3">
+        <h1 id="respHoras" class="display-3 text-center" style="display: none;">5 horas</h1>
+      </div>
+    </div>
+<!-- ================================================================================================================ -->
+    <footer class=" mb-3 text-end">
+      <span class="badge text-black-50">Desenvolvido por Gilbran Andrade</span>
+      <span style="display: block; font-size: 6pt;">ver. 1.0</span>
+    </footer>
+  </div>
+
+  <script src="./js/pessoal.js"></script> 
+  <script src="./js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>
